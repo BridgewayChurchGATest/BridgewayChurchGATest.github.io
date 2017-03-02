@@ -1,0 +1,46 @@
+<nav class="navbar navbar-default navbar-transparent navbar-fixed-top" color-on-scroll="100">
+    <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
+    <div class="container">
+        <div class="navbar-header">
+            <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar bar1"></span>
+                <span class="icon-bar bar2"></span>
+                <span class="icon-bar bar3"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+                <img alt="Bridgeway Church" src="{{ site.baseurl }}/assets/img/logos/Bridgeway_White and Yellow.svg" />
+            </a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right navbar-uppercase">
+                <li><a href="{{ site.baseurl }}{% link index.html %}">Home</a></li>
+                <li><a href="{{ site.baseurl }}{% link about.html %}">About</a></li>
+                <li><a href="{{ site.baseurl }}{% link visit.html %}">Visit</a></li>
+                <li><a href="{{ site.baseurl }}{% link blog.html %}">Latest Posts</a></li>
+                <li><a href="{{ site.baseurl }}{% link growandgo.html %}">Grow &amp; Go</a></li>
+                <li><a href="{{ site.baseurl }}{% link giving.html %}">Giving</a></li>
+                <!-- <li><a href="https://bridgewaychurch.elvanto.net/login/" target="_blank">Elvanto</a></li> -->
+                <li><a href="{{ site.baseurl }}{% link contact.html %}" class="btn btn-danger btn-fill">Contact Us</a></li>
+                <li class="social-links">
+                    <a href="https://www.facebook.com/BridgewayChurchGeorgia/" target="_blank">
+                        <i class="fa fa-facebook-square"></i>
+                    </a>
+                    <a href="https://twitter.com/BridgewayGA" target="_blank">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="http://vimeo.com/bridgewayga" target="_blank">
+                        <i class="fa fa-vimeo-square"></i>
+                    </a>
+                    <a href="https://www.flickr.com/photos/captkodak/collections/72157621944187189" target="_blank">
+                        <i class="fa fa-flickr"></i>
+                    </a>
+                    <a href="{{ site.baseurl }}{% link feed.xml %}" target="_blank">
+                        <i class="fa fa-rss"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</nav>
