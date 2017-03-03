@@ -134,13 +134,13 @@ small,
 }
 
 a {
-  color: #F6BC17;
+  /*color: #F6BC17;*/
   opacity: .7;
-  font-weight: bold;
+  /*font-weight: bold;*/
   /*font-size: 14px;*/
 }
 a:hover {
-  color: #FBED0B;
+  color: #112436;
   opacity: 1;
 }
 
