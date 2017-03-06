@@ -4,7 +4,7 @@ layout: default
 
 <div class="section section-header-blog">
     <div class="parallax filter filter-color-primary">
-        <div class="image" style="background-image:url('{{ site.baseurl }}/assets/img/{{ page.blog_image }}')">
+        <div class="image" style="background-image:url('{{ site.baseurl }}{{ page.image.blog }}')">
         </div>
         <div class="container">
             <div class="content">
@@ -41,13 +41,16 @@ layout: default
             </div>
             <div class="col-md-3 col-md-offset-1 text-center">
                 <h3 class="social-title">Author</h3> {% include {{ page.author_include }} %}
+                {% if page.categories.size > 0 %}
                 <h3 class="social-title">Categories</h3> {% for category in page.categories %}
                 <span class="label label-fill label-danger">{{ category }}</span> {% endfor %} {% assign words = content | number_of_words %}
-                <h3 class="social-title">Tags</h3> {% for tag in page.tags %}
-                <span class="label label-fill label-danger">{{ tag }}</span> {% endfor %} {% assign words = content | number_of_words %}
-                <br>
-                <br>
-                <br>
+                {% endif %}
+                {% if page.tags.size > 0 %}
+                    <h3 class="social-title">Tags</h3> {% for tag in page.tags %}
+                    <span class="label label-fill label-danger">{{ tag }}</span> {% endfor %} {% assign words = content | number_of_words %}
+                    <br>
+                    <br>
+                {% endif %}
                 <h3 class="social-title">Tidbits</h3>
                 <div class="text-gray">
                     <br> {{ page.date | date: "%B %d, %Y" }}
