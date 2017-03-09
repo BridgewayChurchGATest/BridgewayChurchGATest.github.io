@@ -3,20 +3,13 @@
     var transparent = true;
     var fixedTop = false;
     var navbar_initialized = false;
-    var scroll;
-
-    scroll = ( 2500 - $(window).width() ) / $(window).width();
 
     var window_height;
     var window_width;
     var content_opacity = 0;
     var content_transition = 0;
     var burger_menu;
-    var scroll_distance = 500;
     var map;
-
-    $navbar = $('.navbar[color-on-scroll]');
-    scroll_distance = $navbar.attr('color-on-scroll') || 500;
 
     window.initGoogleMaps = function(){
 
@@ -60,7 +53,7 @@
         burger_menu = $('.navbar').hasClass('navbar-burger') ? true : false;
 
         // Init navigation toggle for small screens
-        if(window_width < 992 || burger_menu){
+        if(window_width < 1024 || burger_menu){
             gaia.initRightMenu();
         }
 
@@ -68,15 +61,12 @@
             content_opacity = 1;
         }
 
-        // gaia.checkScrollForTransparentNavbar();
-
     });
 
     //activate collapse right menu when the windows is resized
     $(window).resize(function(){
-        if($(window).width() < 992){
+        if($(window).width() < 1024){
             gaia.initRightMenu();
-            //gaia.checkResponsiveImage();
         }
         if($(window).width() > 992 && !burger_menu){
             $('nav[role="navigation"]').removeClass('navbar-burger');
@@ -87,8 +77,6 @@
 
     $(window).on('scroll',function(){
 
-        // gaia.checkScrollForTransparentNavbar();
-
 
         if(window_width > 992){
             gaia.checkScrollForParallax();
@@ -96,20 +84,6 @@
 
         if(content_opacity == 1 ){
             gaia.checkScrollForContentTransitions();
-        }
-
-    });
-
-    $('a[data-scroll="true"]').click(function(e){
-        var scroll_target = $(this).data('id');
-        var scroll_trigger = $(this).data('scroll');
-
-        if(scroll_trigger == true && scroll_target !== undefined){
-            e.preventDefault();
-
-            $('html, body').animate({
-                 scrollTop: $(scroll_target).offset().top - 50
-            }, 1000);
         }
 
     });
@@ -156,22 +130,6 @@
             }
 
         },
-
-        checkScrollForTransparentNavbar: debounce(function() {
-                if($(document).scrollTop() > scroll_distance ) {
-                    if(transparent) {
-                        transparent = false;
-                        $navbar.removeClass('navbar-transparent');
-                        $('.navbar-brand img').attr("src","/assets/img/logos/Bridgeway_Primary3.svg");
-                    }
-                } else {
-                    if( !transparent ) {
-                        transparent = true;
-                        $navbar.addClass('navbar-transparent');
-                        $('.navbar-brand img').attr("src","/assets/img/logos/Bridgeway_White and Yellow.svg");
-                    }
-                }
-        }, 17),
 
         checkScrollForParallax: debounce(function() {
             	$('.parallax').each(function() {
@@ -243,57 +201,5 @@
 
         return ((elemTop < viewportBottom) && (elemBottom > viewportTop));
     }
-
-}());
-
-(function() {
-
-    var smoothScroll = function ( hash ){
-
-        var scrollTarget;
-        var navTarget;
-
-        if( hash ){
-
-            scrollTarget = $( '[data-smoothscroll=' + hash.slice(1) + ']' );
-
-            $( ".navbar-nav li" ).removeClass( "active" );
-
-            navTarget = $( '#nav' + hash.slice(1) );
-
-            console.log( "hash.slice(1): ", hash.slice(1) );
-            console.log( "navTarget: ", navTarget );
-
-            navTarget.addClass( "active" );
-
-            console.log( "scrollTarget: ", scrollTarget );
-
-            if ( scrollTarget.length ) {
-                $(".navbar-collapse.in").collapse('hide');
-                $( 'html,body' ).animate({
-                    scrollTop: scrollTarget.offset().top - 80
-                }, 1000 );
-                return false;
-            }
-
-        }
-
-    };
-
-    $( 'a[href*=#]:not([href=#]):not([data-toggle="collapse"])' ).click( function( e ) {
-
-        // Make sure the target is on the same page and same domain
-        if ( location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname ) {
-
-            e.preventDefault();
-            smoothScroll(this.hash);
-            
-        }
-    });
-
-    setTimeout( function(){
-        $('.badge_rating_description_short a').attr("href", "http://www.avvo.com/attorneys/32806-fl-nancy-campiglia-1288126.html");
-    }, 3000);
-    
 
 }());
