@@ -2366,7 +2366,7 @@ a.carousel-control span.fa {
   transform: translateY(-50%);
 }
 .section-header .content{
-  top: 50%;
+  top: 55%;
 }
 .section-header .btn,
 .section-header-blog .btn,
@@ -3849,9 +3849,6 @@ body.noscroll {
   .section-header .parallax:after, .section-header .static-image:after {
     height: 80vh;
   }
-  .section-header .content {
-    top: 55%;
-  }
   .section-header .content h1, .section-header .content h5, .section-header .content p {
     margin: 0;
   }
@@ -3870,6 +3867,7 @@ body.noscroll {
   }
   .section-header .content .separator {
     width: 12em;
+    margin: 10px auto;
   }
 
   .section-signin {
