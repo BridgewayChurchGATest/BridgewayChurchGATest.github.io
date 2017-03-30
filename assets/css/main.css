@@ -1900,6 +1900,12 @@ a.carousel-control span.fa {
   background-color: #F6BC17;
 }
 
+.label-category{
+  background-color: #fff;
+  color: #F6BC17;
+  border: solid 1px #F6BC17;
+}
+
 .btn-social {
   opacity: 0.85;
   padding: 8px 9px;
@@ -4915,7 +4921,12 @@ body {
 
 .card.card-blog .tags {
     text-align: center;
-    padding: 25px 0;
+    padding: 15px 0 25px;
+}
+
+.card.card-blog .categories {
+    text-align: center;
+    padding: 0;
 }
 
 .card.card-blog img {

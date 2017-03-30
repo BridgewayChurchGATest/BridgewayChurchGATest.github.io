@@ -43,7 +43,7 @@ layout: default
                 <h3 class="social-title">Author</h3> {% include {{ page.author_include }} %}
                 {% if page.categories.size > 0 %}
                 <h3 class="social-title">Categories</h3> {% for category in page.categories %}
-                <span class="label label-fill label-danger">{{ category }}</span> {% endfor %} {% assign words = content | number_of_words %}
+                <span class="label label-fill label-category">{{ category }}</span> {% endfor %} {% assign words = content | number_of_words %}
                 {% endif %}
                 {% if page.tags.size > 0 %}
                     <h3 class="social-title">Tags</h3> {% for tag in page.tags %}

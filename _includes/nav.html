@@ -17,7 +17,17 @@
                 <li><a href="{{ site.baseurl }}{% link index.html %}">Home</a></li>
                 <li><a href="{{ site.baseurl }}{% link about.html %}">About</a></li>
                 <li><a href="{{ site.baseurl }}{% link visit.html %}">Visit</a></li>
-                <li><a href="{{ site.baseurl }}{% link blog.html %}">Latest Posts</a></li>
+                
+                <li role="presentation" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Resources <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ site.baseurl }}{% link blog.html %}">Blog</a></li>
+                        <li><a href="{{ site.baseurl }}{% link discoveringchristianity.html %}">Discovering Christianity</a></li>
+                    </ul>
+                </li>
+
                 <li><a href="{{ site.baseurl }}{% link growandgo.html %}">Grow &amp; Go</a></li>
                 <li><a href="{{ site.baseurl }}{% link giving.html %}">Giving</a></li>
                 <!-- <li><a href="https://bridgewaychurch.elvanto.net/login/" target="_blank">Elvanto</a></li> -->
