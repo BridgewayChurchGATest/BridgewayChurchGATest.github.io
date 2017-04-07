@@ -81,17 +81,19 @@ permalink: sermon-posts
 			<thead>
 				<tr>
 					<th>Title</th>
+					<th>Series</th>
 					<th>Date</th>
 					<th>Speaker</th>
 				</tr>
 			</thead>
 			<tbody>
-			{% assign othersermonposts = site.posts | where: "categories", "sermons" %}
-			{% for post in othersermonposts %}
+
+			{% for post in sermonposts %}
 			{% if forloop.index > 3 %}
 
 				<tr>
 					<td><a href="{{ post.url }}">{{ post.title }}{% if post.subtitle %}: {{ post.subtitle }}{% endif %}</a></td>
+					<td>{{ post.sermon-series }}</td>
 					<td>{{ post.date | date: "%b %d, %y" }}</td>
 					<td>{{ post.author }}</td>
 				</tr>
