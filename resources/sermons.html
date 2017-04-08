@@ -95,7 +95,7 @@ permalink: resources/sermons
 					<td><a href="{{ post.url }}">{{ post.title }}{% if post.subtitle %}: {{ post.subtitle }}{% endif %}</a></td>
 					<td>{{ post.sermon-series }}</td>
 					<td>{{ post.date | date: "%b %d, %y" }}</td>
-					<td>{{ post.author }}</td>
+					<td>{{ post.author_name_formated }}</td>
 				</tr>
 
 			{% endif %}
