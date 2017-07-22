@@ -93,13 +93,14 @@ permalink: resources/sermons
 
 				<tr>
 					<td><a href="{{ post.url }}">{{ post.title }}{% if post.subtitle %}: {{ post.subtitle }}{% endif %}</a></td>
-					<td>{% if post.sermon-series %} <a href="{{ site.url }}/resources/sermon-series/{{ post.sermon-series | downcase }}">{{ post.sermon-series }}</a> {% endif %}</td>
+					<td>{% if post.sermon-series %} <a href="{{ site.url }}/resources/sermon-series/{{ post.sermon-series | downcase | remove:' ' }}">{{ post.sermon-series }}</a> {% endif %}</td>
 					<td>{{ post.date | date: "%b %d, %y" }}</td>
 					<td>{{ post.speaker }}</td>
 				</tr>
 
 			{% endif %}
 			{% endfor %}
+
 			</tbody>
 		  </table>
 		</div>

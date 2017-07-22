@@ -46,10 +46,11 @@ unpublished: false
 
 # Plugins
 whitelist: []
-gems:      
+gems:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-redirect-from
 
 # Conversion
 markdown:    kramdown
@@ -92,4 +93,3 @@ kramdown:
   input:          GFM
   hard_wrap:      false
   footnote_nr:    1
-
